@@ -1,0 +1,41 @@
+<section class="vh-100 section">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-10 col-lg-8 col-xl-8">
+        <div class="card">
+          <div class="card-body p-4">
+            <h3 class='text-center'> <%= t('show.weather_forecast') %> </h3>
+            <%= render 'shared/message' %>
+            <%= form_with(method: 'get', local: true) do %>
+              <div class="form-group">
+                <div class='mb-2'>
+                  <%= text_field_tag(:address, @address, size: 70, class: 'form-control mr-2', placeholder: t('show.address_placeholder'), required: true) %>
+                </div>
+                <div class='text-center'>
+                  <%= submit_tag("Get Forcast Detail", class: 'btn btn-success') %>
+                </div>
+              </div>
+            <% end %>
+
+            <% if @weather.present? %>
+              <div class="d-flex flex-column text-center mt-5 mb-4">
+                <h6 class="display-4 mb-0 font-weight-bold current-temp"> <%= @weather.temperature %> ℃</h6>
+                <span class="small"><%= @weather.description %></span>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="flex-grow-1 temp-data">
+                  <div class="ms-1"><%= min_temp(@weather) %></div>
+                  <div class="ms-1"><%= max_temp(@weather) %></div>
+                  <div class="ms-1"><%= humidity(@weather) %></div>
+                  <div class="ms-1">
+                    <%= cache_status_text(@weather_cache_exist) %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

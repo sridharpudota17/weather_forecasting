@@ -1,0 +1,22 @@
+en:
+  services:
+    web_forecast:
+      empty_body: 'OpenWeather response body is empty'
+      weather_data_missing: 'Required weather data is missing'
+    geocode:
+      invalid_address: 'Please enter valid address'
+      data_error: 'Geocoder data error'
+      lattitude_error: 'Geocoder latitude is missing'
+      longitude_error: 'Geocoder longitude is missing'
+      address_missing: 'Geocoder address is missing'
+      country_code_missing: 'Geocoder country code is missing'
+      postalcode_missing: 'Geocoder postal code is missing'
+  show:
+    weather_forecast: Weather Forecast
+    address_placeholder: 'Please enter address'
+    min_temp: 'Min. Temp:'
+    max_temp: 'Max. Temp:'
+    humidity: 'Humidity:'
+    results_from_cache: 'Weather details is pulled from cache.'
+    results_using_api_call: 'Weather details is not from cache.'
+      
